@@ -1,3 +1,5 @@
+# Observable
+
 ## Pull y Push
 
 Son dos protocolos diferentes que describen como un data Producer puede comunicarse con un data Consumer.
@@ -41,7 +43,7 @@ Las Funciones solo pueden devolver un solo valor de forma sincrona, sin embargo 
 
 ### Creando un observable
 
-Los observables se puede crear a traves de crear un nuevo Observable o un operador de creación. A los suscriptores del observable, se puede ejecutar para entregar next / error / complete y su ejecución también puede ser eleminada.
+Los observables se puede crear a traves de new Observable o una funcion de creación como: of, from, interval. A los suscriptores del observable, se puede ejecutar para entregar next / error / complete y su ejecución también puede ser eleminada.
 
 ### Suscribiendose a un Observable
 
