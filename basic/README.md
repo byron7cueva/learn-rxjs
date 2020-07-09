@@ -1,3 +1,5 @@
+Este proyecto utiliza Deno
+
 # Rxjs
 
 Es una libreria para componer programas asíncronos y basados en eventos usando secuencias y observables.
