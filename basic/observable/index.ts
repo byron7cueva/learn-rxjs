@@ -58,12 +58,19 @@ const observable = new Observable(subscriber => {
 });
 
 console.log('Antes de suscribirce');
-
+// Un suscription representa la ejecucion de un observer
 observable.subscribe({
+  // Observer
   next(x) { console.log(`El valor de x: ${x}`); },
   error(e) { console.error(`Alguna cosa ocurrio ${e.message}`); },
   complete() { console.log('Termino'); }
 });
+
+observable.subscribe(
+  x => console.log('EL valor de x: ', x),
+  error => console.error(error.message),
+  () => console.log('Completo')
+)
 
 console.log('Despues de suscrbirce');
 
@@ -73,11 +80,12 @@ const observable2 = new Observable(suscribe => {
     suscribe.next('Hola');
   }, 1000)
 
-  // funcion que se ejecuta al desuscribirce
+  // funcion que se ejecuta al ejecutar unsubscribe
   return () => {
     clearInterval(intervalId);
   }
 });
 
 const suscription = observable.subscribe(x => console.log(x))
-suscription.unsubscribe(); // Deteniendo ejecucion
+// Deteniendo ejecucion, liberando el recurso
+suscription.unsubscribe();
