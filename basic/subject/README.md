@@ -19,7 +19,7 @@ Un multicast obaservable usa un Subject bajo el capó para hacer que múltiples 
 Si deseamos evitar la llamada explicita a connect(), podemos usar el método refCount() de ConnectableObservable (recuento de referencia) que devuelve un Observable que realiza un seguimiento de cuantos subscriptores tiene. Cuando el número de subscriptores aumenta de 0 a 1, llamara a connect() para nosotros, lo que iniciaria la ejecucion compartida. Solo cuando el número de suscriptores disminuya de 1 a 0, se cancelará la suscripción y se detendra la ejecucion.
 El método refCount() solamente existe en ConnectableObservable y este retorna un Observable no otro ConnectableObservable.
 
-## a
+## Variantes de Subject
 
 ### BehaviourSubject
 
